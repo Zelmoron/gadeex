@@ -1,0 +1,112 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/menu.gd" id="1_menu"]
+[ext_resource type="Texture2D" path="res://assets/background.png" id="2_bg"]
+[ext_resource type="Texture2D" path="res://assets/ground.png" id="3_ground"]
+[ext_resource type="Texture2D" path="res://assets/bird.png" id="4_bird"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_button"]
+bg_color = Color(0.94, 0.55, 0.2, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.33, 0.2, 0.08, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_button_hover"]
+bg_color = Color(1, 0.69, 0.3, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.33, 0.2, 0.08, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="menu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 480.0
+offset_bottom = 720.0
+script = ExtResource("1_menu")
+
+[node name="background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 480.0
+offset_bottom = 720.0
+texture = ExtResource("2_bg")
+
+[node name="ground" type="TextureRect" parent="."]
+layout_mode = 0
+offset_top = 620.0
+offset_right = 480.0
+offset_bottom = 720.0
+texture = ExtResource("3_ground")
+
+[node name="title" type="Label" parent="."]
+layout_mode = 0
+offset_top = 90.0
+offset_right = 480.0
+offset_bottom = 200.0
+theme_override_colors/font_color = Color(1, 0.93, 0.55, 1)
+theme_override_colors/font_outline_color = Color(0.33, 0.2, 0.08, 1)
+theme_override_constants/outline_size = 14
+theme_override_constants/line_spacing = 12
+theme_override_font_sizes/font_size = 40
+text = "FLAPPY
+BIRD"
+horizontal_alignment = 1
+
+[node name="bird_sprite" type="Sprite2D" parent="."]
+position = Vector2(240, 290)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("4_bird")
+hframes = 3
+frame = 1
+
+[node name="play_button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 140.0
+offset_top = 380.0
+offset_right = 340.0
+offset_bottom = 436.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_button")
+theme_override_styles/hover = SubResource("StyleBoxFlat_button_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_button")
+theme_override_colors/font_outline_color = Color(0.33, 0.2, 0.08, 1)
+theme_override_constants/outline_size = 6
+text = "ИГРАТЬ"
+
+[node name="exit_button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 140.0
+offset_top = 452.0
+offset_right = 340.0
+offset_bottom = 508.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_button")
+theme_override_styles/hover = SubResource("StyleBoxFlat_button_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_button")
+theme_override_colors/font_outline_color = Color(0.33, 0.2, 0.08, 1)
+theme_override_constants/outline_size = 6
+text = "ВЫХОД"
+
+[node name="hint" type="Label" parent="."]
+layout_mode = 0
+offset_top = 540.0
+offset_right = 480.0
+offset_bottom = 580.0
+theme_override_colors/font_outline_color = Color(0.12, 0.12, 0.2, 1)
+theme_override_constants/outline_size = 8
+theme_override_constants/line_spacing = 8
+text = "ПРОБЕЛ: ВЗМАХ
+ПРОЛЕТИ 10 ТРУБ"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="play_button" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="exit_button" to="." method="_on_exit_button_pressed"]
