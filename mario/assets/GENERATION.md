@@ -1,0 +1,37 @@
+# Генерация графики
+
+Графика создана встроенным ImageGen для учебного проекта Star Escape. Исходные PNG сохранены целиком; кадры выбираются в Godot через Sprite2D и AtlasTexture. Стиль: пиксельная имперская база, холодная сталь, голубые огни, оранжевый костюм повстанца.
+
+## Промпты
+
+### background
+
+Use case: stylized-concept. Asset type: actual background texture for a 2D side-scrolling pixel-art platformer called STAR ESCAPE, set on a Star Wars Imperial space station. Generate one wide 1536x1024 image. Strict orthographic SIDE VIEW, flat 2D 16-bit pixel art with crisp visible pixels, no perspective floor. Dark navy and desaturated blue steel hangar architecture, monumental repeated vertical ribs, pipes, recessed cyan light strips, a huge central panoramic window revealing outer space, a distant planet and tiny angular spacecraft. A few muted red alarm lights. Large dark areas so foreground gameplay remains very readable. All architecture belongs to the distant background, no playable platforms, no foreground floor, no characters, no text, no logo, no UI. Industrial, atmospheric, coherent pixel clusters, limited palette; avoid painterly texture, gradients, blur and 3D rendering. Image should repeat horizontally with matching dark vertical beams at its left and right edges.
+
+### hero
+
+Use case: stylized-concept. Asset type: production game sprite atlas, transparent PNG, exactly 1024x1024. 4 columns by 4 rows, sixteen equal 256x256 cells, NO visible grid, NO labels, NO background. A single consistent original Rebel escapee in a Star Wars inspired space station: compact athletic character, ivory open-face pilot helmet with dark visor raised, orange flight suit, pale cream utility vest, dark gloves and dark navy boots, small dark backpack, no weapons. Charming detailed 16-bit pixel art, sharp pixel clusters, strict side view, always facing RIGHT. Every frame same proportions, scale, palette; entire character fits each cell with 36px padding and feet baseline at cell y=224; character about 100px wide and 180px tall. Row 1: four subtle idle breathing poses. Row 2: four successive WALK cycle poses, alternating legs and arms. Row 3: four successive RUN cycle poses, forward lean and clearly distinct leg strides. Row 4: jump takeoff with knees bent, airborne rising with knees tucked, descending with legs extended, hurt recoiling. Align all characters to the center of their cells. Exactly 16 separate full-body poses, clean actual alpha transparency between them. No shadows on a floor, no text, no decorative border.
+
+### kit
+
+Use case: stylized-concept. Asset type: production sprite atlas for a Star Wars Imperial-base pixel-art platformer. Transparent PNG exactly 1024x1024, strict 4 columns x 4 rows of equal 256x256 cells, no visible grid, no text. Crisp detailed 16-bit pixel art, SIDE VIEW, consistent navy steel, cyan lights, tiny orange and red accents. Every object stays within its own cell. ROW 1 left to right: (1) square solid dark steel wall tile filling its entire 256x256 cell with panel seams and rivets; (2) square steel platform tile filling entire cell, bright cyan thin top lip, dark ribbed underside; (3) square destructible cargo crate filling cell, orange corner braces and obvious diagonal cracks; (4) square bonus crate filling cell with luminous cyan energy-cell symbol. ROW 2: four successive walking frames of the SAME small Imperial security droid, ivory and dark-grey squat angular body, single red eye, two articulated legs, side view facing LEFT, same scale and centered baseline y=220, body about 170px wide by 150px tall, transparent margins. ROW 3: (1) same droid hit, red eye flickering, tilting; (2) same droid collapsing knees; (3) same droid as a flat broken wreck with sparks; (4) collectible cyan cylindrical energy cell, centered, large and readable, transparent surrounding. ROW 4: (1) tall closed airlock door in steel frame, cyan strips, whole object fits cell, transparent surrounding; (2) matching OPEN airlock door, dark interior and bright cyan border; (3) square depleted bonus crate filling cell, dim blue metal and empty dark circular socket; (4) small orange steel debris fragments scattered in center, transparent surrounding. No characters other than specified droid, no perspective, no extra objects, no captions. Make a usable clean uniform game atlas.
+
+## Background revision — 2026-10-22
+
+Generated with the built-in ImageGen tool, editing the previous hangar texture. Saved as `assets/hangar.png`.
+
+Use case: precise-object-edit.
+Asset type: actual pixel-art background for a Star Wars side-scrolling platformer.
+Input image: existing background, edit target.
+Replace ONLY the spacecraft visible outside the panoramic window. Preserve the entire dark navy Imperial hangar architecture, window boundaries, framing, planet, pixel art medium, lighting, and image dimensions.
+The large spacecraft must be an unmistakably accurate Imperial-class STAR DESTROYER seen from a slightly elevated three-quarter angle: long sharply pointed TRIANGULAR WEDGE hull, pointed bow facing lower left, broad stern to upper right, flat layered upper deck tapering toward the bow, tall aft command tower with a wide horizontal bridge and two small spherical shield generators. Show the triangular TOP surface clearly. No saucer shape, no diamond/disc silhouette, no symmetrical stacked pyramid. One main destroyer centered around x540 y500, about 340 pixels wide. A smaller matching destroyer at x220 y550.
+On the right side above the planet, two recognizable TIE fighters in three-quarter front view, each about 90 pixels wide: spherical central cockpit, short horizontal pylons, TWO broad upright HEXAGONAL black solar wings with crisp gray rims, both wings fully readable, parallel and symmetric, one on either side of cockpit. Make silhouettes geometrically clean and recognizable even at small scale.
+Crisp detailed 16-bit pixel art with navy-gray metal and restrained cool highlights. No letters, no UI, no foreground characters, no new platforms. Keep spacecraft entirely within the window.
+
+### Planet correction
+
+Use case: precise-object-edit.
+Asset type: pixel-art background texture for a Star Wars platformer.
+Input image is the edit target. Correct ONLY THE PLANET AND ITS IMMEDIATE SPACE BACKGROUND in the panoramic window. Preserve all hangar architecture, window frames, both triangular Star Destroyers and both TIE fighters exactly as shown.
+The planet is currently malformed and looks transparent. Replace it with a physically coherent opaque spherical blue planet. Its outer limb must be a single smooth mathematically CIRCULAR ARC, continuously aligned across the vertical window mullion. Sphere center approximately (1450, 1000), radius approximately 650 pixels, so its upper-left illuminated arc enters the top of the right window and exits the bottom near x900. The night side MUST remain an opaque, subtly visible deep navy planetary surface, blocking ALL background stars inside the planet's circular silhouette. No stars visible through the planet, no triangular space cutouts, no random dark holes, no fading transparency, no bent or kinked outline. A restrained thin atmospheric blue rim along the sunlit upper-left edge, subtle ocean/cloud surface toward right and bottom. The TIE fighters are IN FRONT OF the planet. Space and stars are only OUTSIDE its silhouette.
+Keep crisp 16-bit pixel-art clusters, original dark palette and dimensions1536x1024. No other changes.
