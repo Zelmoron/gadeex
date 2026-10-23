@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://cvpctm38selj2"]
+
+[ext_resource type="Script" uid="uid://c6tmkyi3wr2ww" path="res://scripts/main.gd" id="1"]
+[ext_resource type="FontFile" uid="uid://bc3qn0g163cmp" path="res://assets/fonts/atariclassic-regular.ttf" id="2"]
+
+[node name="Pong" type="Node2D" unique_id=923919995]
+script = ExtResource("1")
+
+[node name="CenterLine" type="Line2D" parent="." unique_id=1759706884]
+points = PackedVector2Array(400, 0, 400, 500)
+width = 1.0
+default_color = Color(0.25, 0.25, 0.25, 1)
+
+[node name="Player" type="ColorRect" parent="." unique_id=1349033254]
+offset_left = 30.0
+offset_top = 210.0
+offset_right = 42.0
+offset_bottom = 290.0
+mouse_filter = 2
+
+[node name="Computer" type="ColorRect" parent="." unique_id=1258958395]
+offset_left = 758.0
+offset_top = 210.0
+offset_right = 770.0
+offset_bottom = 290.0
+mouse_filter = 2
+
+[node name="Ball" type="ColorRect" parent="." unique_id=952001112]
+offset_left = 394.0
+offset_top = 244.0
+offset_right = 406.0
+offset_bottom = 256.0
+mouse_filter = 2
+
+[node name="Score" type="Label" parent="." unique_id=1248662176]
+offset_left = 250.0
+offset_top = 20.0
+offset_right = 550.0
+offset_bottom = 65.0
+theme_override_fonts/font = ExtResource("2")
+theme_override_font_sizes/font_size = 32
+text = "0 : 0"
+horizontal_alignment = 1
+
+[node name="Menu" type="ColorRect" parent="." unique_id=829284544]
+offset_right = 800.0
+offset_bottom = 500.0
+color = Color(0, 0, 0, 1)
+
+[node name="Title" type="Label" parent="Menu" unique_id=1699532927]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 95.0
+offset_right = 600.0
+offset_bottom = 160.0
+theme_override_fonts/font = ExtResource("2")
+theme_override_font_sizes/font_size = 48
+text = "PONG"
+horizontal_alignment = 1
+
+[node name="Message" type="Label" parent="Menu" unique_id=1789148330]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 185.0
+offset_right = 700.0
+offset_bottom = 215.0
+text = "Стрелки вверх / вниз. Игра до 7 очков."
+horizontal_alignment = 1
+
+[node name="Start" type="Button" parent="Menu" unique_id=914181036]
+layout_mode = 0
+offset_left = 300.0
+offset_top = 250.0
+offset_right = 500.0
+offset_bottom = 295.0
+text = "Начать игру"
+
+[node name="Quit" type="Button" parent="Menu" unique_id=1955564118]
+layout_mode = 0
+offset_left = 300.0
+offset_top = 315.0
+offset_right = 500.0
+offset_bottom = 360.0
+text = "Выход"
