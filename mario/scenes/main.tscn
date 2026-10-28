@@ -1,0 +1,18 @@
+[gd_scene format=3]
+[ext_resource type="Script" path="res://scripts/game.gd" id="game"]
+[ext_resource type="PackedScene" path="res://scenes/background.tscn" id="background"]
+[ext_resource type="PackedScene" path="res://scenes/level.tscn" id="level"]
+[ext_resource type="PackedScene" path="res://scenes/player.tscn" id="player"]
+[ext_resource type="PackedScene" path="res://scenes/hud.tscn" id="hud"]
+
+[node name="StarEscape" type="Node2D"]
+texture_filter = 1
+script = ExtResource("game")
+
+[node name="Background" parent="." instance=ExtResource("background")]
+[node name="Level" parent="." instance=ExtResource("level")]
+[node name="Player" parent="." instance=ExtResource("player")]
+position = Vector2(144, 450)
+
+[node name="HUD" type="CanvasLayer" parent="."]
+[node name="Interface" parent="HUD" instance=ExtResource("hud")]

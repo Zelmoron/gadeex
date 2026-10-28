@@ -1,0 +1,323 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/hud.gd" id="1_5ysmq"]
+[ext_resource type="FontFile" path="res://assets/fonts/DejaVuSansMono-Bold.ttf" id="2_6fi6k"]
+[ext_resource type="FontFile" path="res://assets/fonts/DejaVuSansMono.ttf" id="3_uo2fv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_047uy"]
+content_margin_left = 14.0
+content_margin_top = 9.0
+content_margin_right = 14.0
+content_margin_bottom = 10.0
+bg_color = Color(0.07058824, 0.15294118, 0.19607843, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.21, 0.26647058, 0.28941175, 1)
+shadow_color = Color(0, 0, 0, 0.35)
+shadow_offset = Vector2(2, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5pdws"]
+content_margin_left = 14.0
+content_margin_top = 9.0
+content_margin_right = 14.0
+content_margin_bottom = 10.0
+bg_color = Color(0.07058824, 0.15294118, 0.19607843, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.21, 0.26647058, 0.28941175, 1)
+shadow_color = Color(0, 0, 0, 0.35)
+shadow_offset = Vector2(2, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hd3ao"]
+content_margin_left = 14.0
+content_margin_top = 9.0
+content_margin_right = 14.0
+content_margin_bottom = 10.0
+bg_color = Color(0.07058824, 0.15294118, 0.19607843, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.21, 0.26647058, 0.28941175, 1)
+shadow_color = Color(0, 0, 0, 0.35)
+shadow_offset = Vector2(2, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0i1j5"]
+content_margin_left = 14.0
+content_margin_top = 9.0
+content_margin_right = 14.0
+content_margin_bottom = 10.0
+bg_color = Color(0.07058824, 0.15294118, 0.19607843, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.21, 0.26647058, 0.28941175, 1)
+shadow_color = Color(0, 0, 0, 0.35)
+shadow_offset = Vector2(2, 3)
+
+[node name="Interface" type="Control" unique_id=874666998]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource("1_5ysmq")
+
+[node name="Title" type="Label" parent="." unique_id=1688078062]
+texture_filter = 2
+layout_mode = 0
+offset_left = 29.0
+offset_top = 12.0
+offset_right = 29.0
+offset_bottom = 12.0
+theme_override_colors/font_color = Color(0.7882353, 0.8627451, 0.8862745, 1)
+theme_override_fonts/font = ExtResource("2_6fi6k")
+theme_override_font_sizes/font_size = 20
+text = "STAR ESCAPE"
+
+[node name="Tagline" type="Label" parent="." unique_id=1427573829]
+texture_filter = 2
+layout_mode = 0
+offset_left = 30.0
+offset_top = 39.0
+offset_right = 30.0
+offset_bottom = 39.0
+theme_override_colors/font_color = Color(0.46666667, 0.5921569, 0.6431373, 1)
+theme_override_fonts/font = ExtResource("3_uo2fv")
+theme_override_font_sizes/font_size = 10
+text = "ПОБЕГ С ИМПЕРСКОЙ БАЗЫ"
+
+[node name="RouteCaption" type="Label" parent="." unique_id=842679149]
+texture_filter = 2
+layout_mode = 0
+offset_left = 322.0
+offset_top = 10.0
+offset_right = 322.0
+offset_bottom = 10.0
+theme_override_colors/font_color = Color(0.46666667, 0.5921569, 0.6431373, 1)
+theme_override_fonts/font = ExtResource("3_uo2fv")
+theme_override_font_sizes/font_size = 10
+text = "МАРШРУТ / ШЛЮЗ 07"
+
+[node name="Sector" type="Label" parent="." unique_id=897667264]
+texture_filter = 2
+layout_mode = 0
+offset_left = 322.0
+offset_top = 26.0
+offset_right = 322.0
+offset_bottom = 26.0
+theme_override_colors/font_color = Color(0.7882353, 0.8627451, 0.8862745, 1)
+theme_override_fonts/font = ExtResource("2_6fi6k")
+theme_override_font_sizes/font_size = 13
+text = "01 / БЛОК СОДЕРЖАНИЯ"
+
+[node name="ShieldCaption" type="Label" parent="." unique_id=1511122182]
+texture_filter = 2
+layout_mode = 0
+offset_left = 677.0
+offset_top = 10.0
+offset_right = 677.0
+offset_bottom = 10.0
+theme_override_colors/font_color = Color(0.46666667, 0.5921569, 0.6431373, 1)
+theme_override_fonts/font = ExtResource("3_uo2fv")
+theme_override_font_sizes/font_size = 10
+text = "ЗАЩИТА"
+
+[node name="Status" type="Label" parent="." unique_id=732596391]
+texture_filter = 2
+layout_mode = 0
+offset_left = 677.0
+offset_top = 28.0
+offset_right = 677.0
+offset_bottom = 28.0
+theme_override_colors/font_color = Color(0.4392157, 0.7764706, 0.81960785, 1)
+theme_override_fonts/font = ExtResource("2_6fi6k")
+theme_override_font_sizes/font_size = 14
+text = "НЕТ ЩИТА"
+
+[node name="DroidsCaption" type="Label" parent="." unique_id=833255014]
+texture_filter = 2
+layout_mode = 0
+offset_left = 837.0
+offset_top = 10.0
+offset_right = 837.0
+offset_bottom = 10.0
+theme_override_colors/font_color = Color(0.46666667, 0.5921569, 0.6431373, 1)
+theme_override_fonts/font = ExtResource("3_uo2fv")
+theme_override_font_sizes/font_size = 10
+text = "ДРОИДЫ"
+
+[node name="Counter" type="Label" parent="." unique_id=1278929328]
+texture_filter = 2
+layout_mode = 0
+offset_left = 837.0
+offset_top = 28.0
+offset_right = 837.0
+offset_bottom = 28.0
+theme_override_colors/font_color = Color(0.7882353, 0.8627451, 0.8862745, 1)
+theme_override_fonts/font = ExtResource("2_6fi6k")
+theme_override_font_sizes/font_size = 14
+text = "00 / 06"
+
+[node name="WalkKeycap" type="Panel" parent="." unique_id=532974678]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 507.0
+offset_right = 110.0
+offset_bottom = 530.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_047uy")
+
+[node name="WalkKeys" type="Label" parent="." unique_id=443243222]
+texture_filter = 2
+layout_mode = 0
+offset_left = 24.0
+offset_top = 509.0
+offset_right = 110.0
+offset_bottom = 524.0
+theme_override_colors/font_color = Color(0.7882353, 0.8627451, 0.8862745, 1)
+theme_override_fonts/font = ExtResource("2_6fi6k")
+theme_override_font_sizes/font_size = 12
+text = "A D / ← →"
+horizontal_alignment = 1
+
+[node name="WalkCaption" type="Label" parent="." unique_id=140646543]
+texture_filter = 2
+layout_mode = 0
+offset_left = 119.0
+offset_top = 510.0
+offset_right = 119.0
+offset_bottom = 510.0
+theme_override_colors/font_color = Color(0.46666667, 0.5921569, 0.6431373, 1)
+theme_override_fonts/font = ExtResource("3_uo2fv")
+theme_override_font_sizes/font_size = 12
+text = "ХОДЬБА"
+
+[node name="RunKeycap" type="Panel" parent="." unique_id=1204982349]
+layout_mode = 0
+offset_left = 224.0
+offset_top = 507.0
+offset_right = 278.0
+offset_bottom = 530.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5pdws")
+
+[node name="RunKey" type="Label" parent="." unique_id=44342125]
+texture_filter = 2
+layout_mode = 0
+offset_left = 224.0
+offset_top = 509.0
+offset_right = 278.0
+offset_bottom = 524.0
+theme_override_colors/font_color = Color(0.7882353, 0.8627451, 0.8862745, 1)
+theme_override_fonts/font = ExtResource("2_6fi6k")
+theme_override_font_sizes/font_size = 12
+text = "SHIFT"
+horizontal_alignment = 1
+
+[node name="RunCaption" type="Label" parent="." unique_id=1993117058]
+texture_filter = 2
+layout_mode = 0
+offset_left = 287.0
+offset_top = 510.0
+offset_right = 287.0
+offset_bottom = 510.0
+theme_override_colors/font_color = Color(0.46666667, 0.5921569, 0.6431373, 1)
+theme_override_fonts/font = ExtResource("3_uo2fv")
+theme_override_font_sizes/font_size = 12
+text = "БЕГ"
+
+[node name="JumpKeycap" type="Panel" parent="." unique_id=920993490]
+layout_mode = 0
+offset_left = 367.0
+offset_top = 507.0
+offset_right = 485.0
+offset_bottom = 530.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hd3ao")
+
+[node name="JumpKeys" type="Label" parent="." unique_id=2086859859]
+texture_filter = 2
+layout_mode = 0
+offset_left = 367.0
+offset_top = 509.0
+offset_right = 485.0
+offset_bottom = 524.0
+theme_override_colors/font_color = Color(0.7882353, 0.8627451, 0.8862745, 1)
+theme_override_fonts/font = ExtResource("2_6fi6k")
+theme_override_font_sizes/font_size = 12
+text = "SPACE / W / ↑"
+horizontal_alignment = 1
+
+[node name="JumpCaption" type="Label" parent="." unique_id=2022957027]
+texture_filter = 2
+layout_mode = 0
+offset_left = 494.0
+offset_top = 510.0
+offset_right = 494.0
+offset_bottom = 510.0
+theme_override_colors/font_color = Color(0.46666667, 0.5921569, 0.6431373, 1)
+theme_override_fonts/font = ExtResource("3_uo2fv")
+theme_override_font_sizes/font_size = 12
+text = "ПРЫЖОК"
+
+[node name="RestartKeycap" type="Panel" parent="." unique_id=1673660227]
+layout_mode = 0
+offset_left = 833.0
+offset_top = 507.0
+offset_right = 857.0
+offset_bottom = 530.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0i1j5")
+
+[node name="RestartKey" type="Label" parent="." unique_id=660597315]
+texture_filter = 2
+layout_mode = 0
+offset_left = 833.0
+offset_top = 509.0
+offset_right = 857.0
+offset_bottom = 524.0
+theme_override_colors/font_color = Color(0.7882353, 0.8627451, 0.8862745, 1)
+theme_override_fonts/font = ExtResource("2_6fi6k")
+theme_override_font_sizes/font_size = 12
+text = "R"
+horizontal_alignment = 1
+
+[node name="RestartCaption" type="Label" parent="." unique_id=1292349857]
+texture_filter = 2
+layout_mode = 0
+offset_left = 866.0
+offset_top = 510.0
+offset_right = 866.0
+offset_bottom = 510.0
+theme_override_colors/font_color = Color(0.46666667, 0.5921569, 0.6431373, 1)
+theme_override_fonts/font = ExtResource("3_uo2fv")
+theme_override_font_sizes/font_size = 12
+text = "ЗАНОВО"
+
+[node name="Banner" type="Label" parent="." unique_id=938965343]
+texture_filter = 2
+layout_mode = 0
+offset_top = 207.0
+offset_right = 960.0
+offset_bottom = 237.0
+theme_override_colors/font_color = Color(0.7882353, 0.8627451, 0.8862745, 1)
+theme_override_fonts/font = ExtResource("2_6fi6k")
+theme_override_font_sizes/font_size = 25
+horizontal_alignment = 1
+
+[node name="Subtitle" type="Label" parent="." unique_id=1027370855]
+texture_filter = 2
+layout_mode = 0
+offset_top = 251.0
+offset_right = 960.0
+offset_bottom = 266.0
+theme_override_colors/font_color = Color(0.4392157, 0.7764706, 0.81960785, 1)
+theme_override_fonts/font = ExtResource("3_uo2fv")
+theme_override_font_sizes/font_size = 12
+horizontal_alignment = 1

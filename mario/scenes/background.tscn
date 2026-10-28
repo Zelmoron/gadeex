@@ -1,0 +1,41 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" path="res://assets/hangar.png" id="1_bkp1e"]
+
+[node name="Background" type="Node2D" unique_id=1766396769]
+z_index = -10
+
+[node name="HangarParallax" type="Parallax2D" parent="." unique_id=1523747238]
+scroll_scale = Vector2(0.18, 0)
+repeat_size = Vector2(1200, 0)
+repeat_times = 2
+
+[node name="Hangar" type="Sprite2D" parent="HangarParallax" unique_id=1545215189]
+modulate = Color(0.68, 0.73, 0.82, 1)
+position = Vector2(0, -140)
+scale = Vector2(0.78125, 0.78125)
+texture = ExtResource("1_bkp1e")
+centered = false
+
+[node name="PipesParallax" type="Parallax2D" parent="." unique_id=1955413544]
+scroll_scale = Vector2(0.5, 0)
+repeat_size = Vector2(960, 0)
+repeat_times = 2
+
+[node name="BeamLeft" type="Polygon2D" parent="PipesParallax" unique_id=577600906]
+color = Color(0.025, 0.06, 0.09, 0.8)
+polygon = PackedVector2Array(70, 84, 88, 84, 88, 540, 70, 540)
+
+[node name="LightLeft" type="Line2D" parent="PipesParallax" unique_id=1102233213]
+points = PackedVector2Array(75, 140, 75, 270)
+width = 2.0
+default_color = Color(0.13, 0.48, 0.57, 0.7)
+
+[node name="BeamRight" type="Polygon2D" parent="PipesParallax" unique_id=1142188416]
+color = Color(0.025, 0.06, 0.09, 0.8)
+polygon = PackedVector2Array(760, 84, 778, 84, 778, 540, 760, 540)
+
+[node name="LightRight" type="Line2D" parent="PipesParallax" unique_id=1925443069]
+points = PackedVector2Array(765, 140, 765, 270)
+width = 2.0
+default_color = Color(0.13, 0.48, 0.57, 0.7)

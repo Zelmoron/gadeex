@@ -1,0 +1,663 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/platform.tscn" id="platform"]
+[ext_resource type="PackedScene" path="res://scenes/crumbling_platform.tscn" id="crumbling_platform"]
+[ext_resource type="PackedScene" path="res://scenes/block.tscn" id="block"]
+[ext_resource type="PackedScene" path="res://scenes/bonus_block.tscn" id="bonus_block"]
+[ext_resource type="PackedScene" path="res://scenes/droid.tscn" id="droid"]
+[ext_resource type="Texture2D" path="res://assets/kit.png" id="kit"]
+[ext_resource type="FontFile" path="res://assets/fonts/DejaVuSansMono.ttf" id="font"]
+[ext_resource type="FontFile" path="res://assets/fonts/DejaVuSansMono-Bold.ttf" id="bold"]
+[sub_resource type="RectangleShape2D" id="Boundary"]
+size = Vector2(48, 1000)
+[sub_resource type="RectangleShape2D" id="Exit"]
+size = Vector2(65, 130)
+[sub_resource type="AtlasTexture" id="Door"]
+atlas = ExtResource("kit")
+region = Rect2(47, 920, 268, 268)
+[sub_resource type="StyleBoxFlat" id="Plate0"]
+content_margin_left = 14.0
+content_margin_top = 9.0
+content_margin_right = 14.0
+content_margin_bottom = 10.0
+bg_color = Color(0.04705882, 0.10588235, 0.14901961, 0.96078431)
+border_width_left = 3
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.19764705882352943, 0.34941176470588237, 0.3688235294117647, 1)
+shadow_color = Color(0, 0, 0, 0.35)
+shadow_size = 2
+shadow_offset = Vector2(2, 3)
+[sub_resource type="StyleBoxFlat" id="Plate1"]
+content_margin_left = 14.0
+content_margin_top = 9.0
+content_margin_right = 14.0
+content_margin_bottom = 10.0
+bg_color = Color(0.04705882, 0.10588235, 0.14901961, 0.96078431)
+border_width_left = 3
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.40588235294117647, 0.2858823529411765, 0.17647058823529413, 1)
+shadow_color = Color(0, 0, 0, 0.35)
+shadow_size = 2
+shadow_offset = Vector2(2, 3)
+
+[sub_resource type="RectangleShape2D" id="PlatformShape1"]
+resource_local_to_scene = true
+size = Vector2(1008.0, 144.0)
+
+[sub_resource type="RectangleShape2D" id="PlatformShape2"]
+resource_local_to_scene = true
+size = Vector2(816.0, 144.0)
+
+[sub_resource type="RectangleShape2D" id="PlatformShape3"]
+resource_local_to_scene = true
+size = Vector2(576.0, 144.0)
+
+[sub_resource type="RectangleShape2D" id="PlatformShape4"]
+resource_local_to_scene = true
+size = Vector2(1296.0, 144.0)
+
+[sub_resource type="RectangleShape2D" id="PlatformShape5"]
+resource_local_to_scene = true
+size = Vector2(96.0, 48.0)
+
+[sub_resource type="RectangleShape2D" id="PlatformShape6"]
+resource_local_to_scene = true
+size = Vector2(144.0, 96.0)
+
+[sub_resource type="RectangleShape2D" id="PlatformShape7"]
+resource_local_to_scene = true
+size = Vector2(96.0, 48.0)
+
+[sub_resource type="RectangleShape2D" id="PlatformShape8"]
+resource_local_to_scene = true
+size = Vector2(288.0, 96.0)
+
+[sub_resource type="RectangleShape2D" id="PlatformShape9"]
+resource_local_to_scene = true
+size = Vector2(144.0, 24.0)
+
+[sub_resource type="RectangleShape2D" id="PlatformShape10"]
+resource_local_to_scene = true
+size = Vector2(144.0, 24.0)
+
+[sub_resource type="RectangleShape2D" id="PlatformShape11"]
+resource_local_to_scene = true
+size = Vector2(144.0, 24.0)
+
+[sub_resource type="RectangleShape2D" id="PlatformShape12"]
+resource_local_to_scene = true
+size = Vector2(192.0, 96.0)
+
+[sub_resource type="RectangleShape2D" id="PlatformShape13"]
+resource_local_to_scene = true
+size = Vector2(96.0, 48.0)
+
+[sub_resource type="RectangleShape2D" id="PlatformShape14"]
+resource_local_to_scene = true
+size = Vector2(192.0, 96.0)
+
+[sub_resource type="RectangleShape2D" id="PlatformShape15"]
+resource_local_to_scene = true
+size = Vector2(144.0, 24.0)
+
+[sub_resource type="RectangleShape2D" id="PlatformShape16"]
+resource_local_to_scene = true
+size = Vector2(96.0, 48.0)
+
+[sub_resource type="RectangleShape2D" id="PlatformShape17"]
+resource_local_to_scene = true
+size = Vector2(96.0, 4)
+
+[sub_resource type="RectangleShape2D" id="PlatformShape18"]
+resource_local_to_scene = true
+size = Vector2(96.0, 24.0)
+
+[sub_resource type="RectangleShape2D" id="PlatformShape19"]
+resource_local_to_scene = true
+size = Vector2(96.0, 4)
+
+[sub_resource type="RectangleShape2D" id="PlatformShape20"]
+resource_local_to_scene = true
+size = Vector2(96.0, 24.0)
+
+[sub_resource type="RectangleShape2D" id="PlatformShape21"]
+resource_local_to_scene = true
+size = Vector2(96.0, 4)
+
+[sub_resource type="RectangleShape2D" id="PlatformShape22"]
+resource_local_to_scene = true
+size = Vector2(144.0, 24.0)
+
+[sub_resource type="RectangleShape2D" id="PlatformShape23"]
+resource_local_to_scene = true
+size = Vector2(144.0, 4)
+
+[node name="Level" type="Node2D"]
+
+[node name="Platform1" parent="." instance=ExtResource("platform")]
+position = Vector2(0.0, 456.0)
+width = 1008.0
+depth = 144.0
+
+[node name="CollisionShape2D" parent="Platform1" index="0"]
+position = Vector2(504.0, 72.0)
+shape = SubResource("PlatformShape1")
+
+[node name="Platform2" parent="." instance=ExtResource("platform")]
+position = Vector2(1200.0, 456.0)
+width = 816.0
+depth = 144.0
+
+[node name="CollisionShape2D" parent="Platform2" index="0"]
+position = Vector2(408.0, 72.0)
+shape = SubResource("PlatformShape2")
+
+[node name="Platform3" parent="." instance=ExtResource("platform")]
+position = Vector2(2688.0, 456.0)
+width = 576.0
+depth = 144.0
+
+[node name="CollisionShape2D" parent="Platform3" index="0"]
+position = Vector2(288.0, 72.0)
+shape = SubResource("PlatformShape3")
+
+[node name="Platform4" parent="." instance=ExtResource("platform")]
+position = Vector2(3984.0, 456.0)
+width = 1296.0
+depth = 144.0
+
+[node name="CollisionShape2D" parent="Platform4" index="0"]
+position = Vector2(648.0, 72.0)
+shape = SubResource("PlatformShape4")
+
+[node name="Platform5" parent="." instance=ExtResource("platform")]
+position = Vector2(720.0, 408.0)
+width = 96.0
+depth = 48.0
+
+[node name="CollisionShape2D" parent="Platform5" index="0"]
+position = Vector2(48.0, 24.0)
+shape = SubResource("PlatformShape5")
+
+[node name="Platform6" parent="." instance=ExtResource("platform")]
+position = Vector2(864.0, 360.0)
+width = 144.0
+depth = 96.0
+
+[node name="CollisionShape2D" parent="Platform6" index="0"]
+position = Vector2(72.0, 48.0)
+shape = SubResource("PlatformShape6")
+
+[node name="Platform7" parent="." instance=ExtResource("platform")]
+position = Vector2(1488.0, 408.0)
+width = 96.0
+depth = 48.0
+
+[node name="CollisionShape2D" parent="Platform7" index="0"]
+position = Vector2(48.0, 24.0)
+shape = SubResource("PlatformShape7")
+
+[node name="Platform8" parent="." instance=ExtResource("platform")]
+position = Vector2(1584.0, 360.0)
+width = 288.0
+depth = 96.0
+
+[node name="CollisionShape2D" parent="Platform8" index="0"]
+position = Vector2(144.0, 48.0)
+shape = SubResource("PlatformShape8")
+
+[node name="Platform9" parent="." instance=ExtResource("platform")]
+position = Vector2(1968.0, 312.0)
+width = 144.0
+depth = 24.0
+
+[node name="CollisionShape2D" parent="Platform9" index="0"]
+position = Vector2(72.0, 12.0)
+shape = SubResource("PlatformShape9")
+
+[node name="Platform10" parent="." instance=ExtResource("platform")]
+position = Vector2(2208.0, 264.0)
+width = 144.0
+depth = 24.0
+
+[node name="CollisionShape2D" parent="Platform10" index="0"]
+position = Vector2(72.0, 12.0)
+shape = SubResource("PlatformShape10")
+
+[node name="Platform11" parent="." instance=ExtResource("platform")]
+position = Vector2(2448.0, 336.0)
+width = 144.0
+depth = 24.0
+
+[node name="CollisionShape2D" parent="Platform11" index="0"]
+position = Vector2(72.0, 12.0)
+shape = SubResource("PlatformShape11")
+
+[node name="Platform12" parent="." instance=ExtResource("platform")]
+position = Vector2(3072.0, 360.0)
+width = 192.0
+depth = 96.0
+
+[node name="CollisionShape2D" parent="Platform12" index="0"]
+position = Vector2(96.0, 48.0)
+shape = SubResource("PlatformShape12")
+
+[node name="Platform13" parent="." instance=ExtResource("platform")]
+position = Vector2(4320.0, 408.0)
+width = 96.0
+depth = 48.0
+
+[node name="CollisionShape2D" parent="Platform13" index="0"]
+position = Vector2(48.0, 24.0)
+shape = SubResource("PlatformShape13")
+
+[node name="Platform14" parent="." instance=ExtResource("platform")]
+position = Vector2(4416.0, 360.0)
+width = 192.0
+depth = 96.0
+
+[node name="CollisionShape2D" parent="Platform14" index="0"]
+position = Vector2(96.0, 48.0)
+shape = SubResource("PlatformShape14")
+
+[node name="Platform15" parent="." instance=ExtResource("platform")]
+position = Vector2(4704.0, 312.0)
+width = 144.0
+depth = 24.0
+
+[node name="CollisionShape2D" parent="Platform15" index="0"]
+position = Vector2(72.0, 12.0)
+shape = SubResource("PlatformShape15")
+
+[node name="CrumblingPlatform1" parent="." instance=ExtResource("crumbling_platform")]
+position = Vector2(2928.0, 408.0)
+width = 96.0
+depth = 48.0
+
+[node name="CollisionShape2D" parent="CrumblingPlatform1" index="0"]
+position = Vector2(48.0, 24.0)
+shape = SubResource("PlatformShape16")
+
+[node name="CollisionShape2D" parent="CrumblingPlatform1/StandArea" index="0"]
+position = Vector2(48.0, -1)
+shape = SubResource("PlatformShape17")
+
+[node name="CrumblingPlatform2" parent="." instance=ExtResource("crumbling_platform")]
+position = Vector2(3360.0, 312.0)
+width = 96.0
+depth = 24.0
+
+[node name="CollisionShape2D" parent="CrumblingPlatform2" index="0"]
+position = Vector2(48.0, 12.0)
+shape = SubResource("PlatformShape18")
+
+[node name="CollisionShape2D" parent="CrumblingPlatform2/StandArea" index="0"]
+position = Vector2(48.0, -1)
+shape = SubResource("PlatformShape19")
+
+[node name="CrumblingPlatform3" parent="." instance=ExtResource("crumbling_platform")]
+position = Vector2(3552.0, 264.0)
+width = 96.0
+depth = 24.0
+
+[node name="CollisionShape2D" parent="CrumblingPlatform3" index="0"]
+position = Vector2(48.0, 12.0)
+shape = SubResource("PlatformShape20")
+
+[node name="CollisionShape2D" parent="CrumblingPlatform3/StandArea" index="0"]
+position = Vector2(48.0, -1)
+shape = SubResource("PlatformShape21")
+
+[node name="CrumblingPlatform4" parent="." instance=ExtResource("crumbling_platform")]
+position = Vector2(3744.0, 336.0)
+width = 144.0
+depth = 24.0
+
+[node name="CollisionShape2D" parent="CrumblingPlatform4" index="0"]
+position = Vector2(72.0, 12.0)
+shape = SubResource("PlatformShape22")
+
+[node name="CollisionShape2D" parent="CrumblingPlatform4/StandArea" index="0"]
+position = Vector2(72.0, -1)
+shape = SubResource("PlatformShape23")
+
+[node name="Boundary1" type="StaticBody2D" parent="."]
+position = Vector2(-24.0, 300.0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary1"]
+shape = SubResource("Boundary")
+
+[node name="Boundary2" type="StaticBody2D" parent="."]
+position = Vector2(5304.0, 300.0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary2"]
+shape = SubResource("Boundary")
+
+[node name="Block1" parent="." instance=ExtResource("block")]
+position = Vector2(528.0, 336.0)
+
+[node name="Block2" parent="." instance=ExtResource("block")]
+position = Vector2(576.0, 336.0)
+
+[node name="Block3" parent="." instance=ExtResource("block")]
+position = Vector2(624.0, 336.0)
+
+[node name="Block4" parent="." instance=ExtResource("block")]
+position = Vector2(1344.0, 288.0)
+
+[node name="Block5" parent="." instance=ExtResource("block")]
+position = Vector2(1392.0, 288.0)
+
+[node name="Block6" parent="." instance=ExtResource("block")]
+position = Vector2(2808.0, 288.0)
+
+[node name="Block7" parent="." instance=ExtResource("block")]
+position = Vector2(2856.0, 288.0)
+
+[node name="Block8" parent="." instance=ExtResource("block")]
+position = Vector2(4080.0, 288.0)
+
+[node name="Block9" parent="." instance=ExtResource("block")]
+position = Vector2(4128.0, 288.0)
+
+[node name="Block10" parent="." instance=ExtResource("bonus_block")]
+position = Vector2(432.0, 336.0)
+
+[node name="Block11" parent="." instance=ExtResource("bonus_block")]
+position = Vector2(2280.0, 144.0)
+
+[node name="Block12" parent="." instance=ExtResource("bonus_block")]
+position = Vector2(4776.0, 192.0)
+
+[node name="Droid1" parent="." instance=ExtResource("droid")]
+position = Vector2(1370.0, 450.0)
+speed = 58.0
+patrol_distance = 80.0
+
+[node name="Droid2" parent="." instance=ExtResource("droid")]
+position = Vector2(1728.0, 354.0)
+speed = 58.0
+patrol_distance = 80.0
+
+[node name="Droid3" parent="." instance=ExtResource("droid")]
+position = Vector2(2810.0, 450.0)
+speed = 70.0
+patrol_distance = 55.0
+
+[node name="Droid4" parent="." instance=ExtResource("droid")]
+position = Vector2(4160.0, 450.0)
+speed = 70.0
+patrol_distance = 80.0
+
+[node name="Droid5" parent="." instance=ExtResource("droid")]
+position = Vector2(4536.0, 354.0)
+speed = 70.0
+patrol_distance = 40.0
+
+[node name="Droid6" parent="." instance=ExtResource("droid")]
+position = Vector2(4850.0, 450.0)
+speed = 70.0
+patrol_distance = 80.0
+
+[node name="Sign1" type="PanelContainer" parent="."]
+offset_left = 80.0
+offset_top = 122.0
+offset_right = 80.0
+offset_bottom = 122.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Plate0")
+
+[node name="Lines" type="VBoxContainer" parent="Sign1"]
+theme_override_constants/separation = 3
+
+[node name="Caption" type="Label" parent="Sign1/Lines"]
+texture_filter = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.4666666666666667, 0.592156862745098, 0.6431372549019608, 1)
+theme_override_fonts/font = ExtResource("font")
+theme_override_font_sizes/font_size = 9
+text = "01 / БЛОК СОДЕРЖАНИЯ"
+
+[node name="Text" type="Label" parent="Sign1/Lines"]
+texture_filter = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.4392156862745098, 0.7764705882352941, 0.8196078431372549, 1)
+theme_override_fonts/font = ExtResource("bold")
+theme_override_font_sizes/font_size = 15
+text = "К ШЛЮЗУ 07  →"
+
+[node name="Sign2" type="PanelContainer" parent="."]
+offset_left = 328.0
+offset_top = 122.0
+offset_right = 328.0
+offset_bottom = 122.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Plate0")
+
+[node name="Lines" type="VBoxContainer" parent="Sign2"]
+theme_override_constants/separation = 3
+
+[node name="Caption" type="Label" parent="Sign2/Lines"]
+texture_filter = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.4666666666666667, 0.592156862745098, 0.6431372549019608, 1)
+theme_override_fonts/font = ExtResource("font")
+theme_override_font_sizes/font_size = 9
+text = "ЭНЕРГОЯЧЕЙКА"
+
+[node name="Text" type="Label" parent="Sign2/Lines"]
+texture_filter = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.4392156862745098, 0.7764705882352941, 0.8196078431372549, 1)
+theme_override_fonts/font = ExtResource("bold")
+theme_override_font_sizes/font_size = 15
+text = "УДАР СНИЗУ → ЩИТ"
+
+[node name="Sign3" type="PanelContainer" parent="."]
+offset_left = 825.0
+offset_top = 184.0
+offset_right = 825.0
+offset_bottom = 184.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Plate1")
+
+[node name="Lines" type="VBoxContainer" parent="Sign3"]
+theme_override_constants/separation = 3
+
+[node name="Caption" type="Label" parent="Sign3/Lines"]
+texture_filter = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.4666666666666667, 0.592156862745098, 0.6431372549019608, 1)
+theme_override_fonts/font = ExtResource("font")
+theme_override_font_sizes/font_size = 9
+text = "ПРОВАЛ ВПЕРЕДИ"
+
+[node name="Text" type="Label" parent="Sign3/Lines"]
+texture_filter = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.9019607843137255, 0.6352941176470588, 0.39215686274509803, 1)
+theme_override_fonts/font = ExtResource("bold")
+theme_override_font_sizes/font_size = 15
+text = "SHIFT + ПРЫЖОК"
+
+[node name="Sign4" type="PanelContainer" parent="."]
+offset_left = 1280.0
+offset_top = 132.0
+offset_right = 1280.0
+offset_bottom = 132.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Plate0")
+
+[node name="Lines" type="VBoxContainer" parent="Sign4"]
+theme_override_constants/separation = 3
+
+[node name="Caption" type="Label" parent="Sign4/Lines"]
+texture_filter = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.4666666666666667, 0.592156862745098, 0.6431372549019608, 1)
+theme_override_fonts/font = ExtResource("font")
+theme_override_font_sizes/font_size = 9
+text = "АТАКА СВЕРХУ"
+
+[node name="Text" type="Label" parent="Sign4/Lines"]
+texture_filter = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.4392156862745098, 0.7764705882352941, 0.8196078431372549, 1)
+theme_override_fonts/font = ExtResource("bold")
+theme_override_font_sizes/font_size = 15
+text = "ПРЫГНИ НА ДРОИДА"
+
+[node name="Sign5" type="PanelContainer" parent="."]
+offset_left = 1880.0
+offset_top = 100.0
+offset_right = 1880.0
+offset_bottom = 100.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Plate0")
+
+[node name="Lines" type="VBoxContainer" parent="Sign5"]
+theme_override_constants/separation = 3
+
+[node name="Caption" type="Label" parent="Sign5/Lines"]
+texture_filter = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.4666666666666667, 0.592156862745098, 0.6431372549019608, 1)
+theme_override_fonts/font = ExtResource("font")
+theme_override_font_sizes/font_size = 9
+text = "02 / ТЕХНИЧЕСКАЯ ШАХТА"
+
+[node name="Text" type="Label" parent="Sign5/Lines"]
+texture_filter = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.4392156862745098, 0.7764705882352941, 0.8196078431372549, 1)
+theme_override_fonts/font = ExtResource("bold")
+theme_override_font_sizes/font_size = 15
+text = "ПО ПЛАТФОРМАМ  →"
+
+[node name="Sign6" type="PanelContainer" parent="."]
+offset_left = 2940.0
+offset_top = 125.0
+offset_right = 2940.0
+offset_bottom = 125.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Plate1")
+
+[node name="Lines" type="VBoxContainer" parent="Sign6"]
+theme_override_constants/separation = 3
+
+[node name="Caption" type="Label" parent="Sign6/Lines"]
+texture_filter = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.4666666666666667, 0.592156862745098, 0.6431372549019608, 1)
+theme_override_fonts/font = ExtResource("font")
+theme_override_font_sizes/font_size = 9
+text = "ХРУПКИЕ ОПОРЫ"
+
+[node name="Text" type="Label" parent="Sign6/Lines"]
+texture_filter = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.9019607843137255, 0.6352941176470588, 0.39215686274509803, 1)
+theme_override_fonts/font = ExtResource("bold")
+theme_override_font_sizes/font_size = 15
+text = "НЕ ЗАДЕРЖИВАЙСЯ"
+
+[node name="Sign7" type="PanelContainer" parent="."]
+offset_left = 3990.0
+offset_top = 125.0
+offset_right = 3990.0
+offset_bottom = 125.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Plate0")
+
+[node name="Lines" type="VBoxContainer" parent="Sign7"]
+theme_override_constants/separation = 3
+
+[node name="Caption" type="Label" parent="Sign7/Lines"]
+texture_filter = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.4666666666666667, 0.592156862745098, 0.6431372549019608, 1)
+theme_override_fonts/font = ExtResource("font")
+theme_override_font_sizes/font_size = 9
+text = "03 / ЗОНА ВЫЛЕТА"
+
+[node name="Text" type="Label" parent="Sign7/Lines"]
+texture_filter = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.4392156862745098, 0.7764705882352941, 0.8196078431372549, 1)
+theme_override_fonts/font = ExtResource("bold")
+theme_override_font_sizes/font_size = 15
+text = "ПОСАДОЧНЫЙ АНГАР"
+
+[node name="Sign8" type="PanelContainer" parent="."]
+offset_left = 4880.0
+offset_top = 234.0
+offset_right = 4880.0
+offset_bottom = 234.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Plate0")
+
+[node name="Lines" type="VBoxContainer" parent="Sign8"]
+theme_override_constants/separation = 3
+
+[node name="Caption" type="Label" parent="Sign8/Lines"]
+texture_filter = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.4666666666666667, 0.592156862745098, 0.6431372549019608, 1)
+theme_override_fonts/font = ExtResource("font")
+theme_override_font_sizes/font_size = 9
+text = "ВЫХОД С БАЗЫ"
+
+[node name="Text" type="Label" parent="Sign8/Lines"]
+texture_filter = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.4392156862745098, 0.7764705882352941, 0.8196078431372549, 1)
+theme_override_fonts/font = ExtResource("bold")
+theme_override_font_sizes/font_size = 15
+text = "ШЛЮЗ 07  →"
+
+[node name="Warning1" type="Polygon2D" parent="."]
+position = Vector2(984.0, 446.0)
+polygon = PackedVector2Array(-10, 0, 10, 0, 10, 4, -10, 4)
+color = Color(0.94901961, 0.6, 0.33333333, 1)
+
+[node name="Warning2" type="Polygon2D" parent="."]
+position = Vector2(1224.0, 446.0)
+polygon = PackedVector2Array(-10, 0, 10, 0, 10, 4, -10, 4)
+color = Color(0.94901961, 0.6, 0.33333333, 1)
+
+[node name="Warning3" type="Polygon2D" parent="."]
+position = Vector2(1992.0, 446.0)
+polygon = PackedVector2Array(-10, 0, 10, 0, 10, 4, -10, 4)
+color = Color(0.94901961, 0.6, 0.33333333, 1)
+
+[node name="Warning4" type="Polygon2D" parent="."]
+position = Vector2(2712.0, 446.0)
+polygon = PackedVector2Array(-10, 0, 10, 0, 10, 4, -10, 4)
+color = Color(0.94901961, 0.6, 0.33333333, 1)
+
+[node name="Warning5" type="Polygon2D" parent="."]
+position = Vector2(3240.0, 446.0)
+polygon = PackedVector2Array(-10, 0, 10, 0, 10, 4, -10, 4)
+color = Color(0.94901961, 0.6, 0.33333333, 1)
+
+[node name="Warning6" type="Polygon2D" parent="."]
+position = Vector2(4008.0, 446.0)
+polygon = PackedVector2Array(-10, 0, 10, 0, 10, 4, -10, 4)
+color = Color(0.94901961, 0.6, 0.33333333, 1)
+
+[node name="Gate" type="Sprite2D" parent="."]
+position = Vector2(5050, 382)
+scale = Vector2(0.39552239, 0.55223881)
+texture = SubResource("Door")
+
+[node name="Exit" type="Area2D" parent="."]
+position = Vector2(5050, 390)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Exit"]
+shape = SubResource("Exit")
